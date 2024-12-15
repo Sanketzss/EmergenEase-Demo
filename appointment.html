@@ -34,21 +34,22 @@
     <main>
         <section class="form-section">
             <h2>Book an Appointment</h2>
-            <form id="appointmentForm">
-                <label for="doctor">Select Doctor</label>
-                <select id="doctor" required>
-                    <option value="Dr. Smith">Dr. Smith</option>
-                    <option value="Dr. Johnson">Dr. Johnson</option>
-                </select>
+            <form action="/appointment" method="POST">
+                <label for="appointment-doctor-id">Doctor ID:</label>
+                <input type="text" id="appointment-doctor-id" name="doctor_id" required>
 
-                <label for="appointmentDate">Date</label>
-                <input type="date" id="appointmentDate" required>
+                <label for="appointment-patient-id">Patient ID:</label>
+                <input type="text" id="appointment-patient-id" name="patient_id" required>
 
-                <label for="appointmentTime">Time</label>
-                <input type="time" id="appointmentTime" required>
+                <label for="appointment-date">Date:</label>
+                <input type="date" id="appointment-date" name="appointment_date" required>
 
-                <button type="submit" class="submit-button">Book Appointment</button>
+                <label for="appointment-time">Time:</label>
+                <input type="time" id="appointment-time" name="appointment_time" required>
+
+                <button type="submit">Book Appointment</button>
             </form>
+
         </section>
     </main>
 
