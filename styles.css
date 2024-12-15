@@ -1,0 +1,553 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@600&family=Montserrat:wght@700&family=Open+Sans:wght@300;400&family=Roboto:wght@700&display=swap');
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%; /* Ensure the body takes full height */
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensure footer stays at bottom */
+}
+
+.header {
+    background-color: #007BFF;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between; /* Align items on opposite sides */
+    align-items: center;
+}
+
+.features {
+    display: block;
+    background-color: #007BFF; /* White background for the features section */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    padding: 20px;
+    align-items: center;
+
+    animation: fadeIn 1s ease; /* Animation */
+    max-width: 100%; /* Limit width of the features section */
+    margin: 0 auto; /* Center the section */
+}
+
+.features h2 {
+    margin-bottom: 20px; /* Space below heading */
+}
+
+.feature {
+    margin-bottom: 20px; /* Space between features */
+    opacity: 0; /* Start invisible for animation */
+    animation: slideIn 0.5s forwards; /* Slide in effect */
+}
+
+.feature h3 {
+    margin: 0;
+    color: white; /* Darker color for feature titles */
+}
+
+.feature p {
+    margin: 5px 0 10px; /* Space around paragraph */
+    background-color: #007BFF
+}
+
+.logo-link img {
+    height: 50px;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+}
+
+/* Styling for the logo image */
+.logo {
+    width: 50px; /* Adjust as necessary */
+    height: auto;
+    margin-right: 10px; /* Space between logo and site name */
+}
+
+.logo:hover {
+    transform: scale(1.05);
+    animation: ease-in-out;
+}
+
+/* Styling for the site name */
+.logo-link h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    display: inline;
+    font-size: 1.5rem; /* Adjust size as necessary */
+    color: #e6efef;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+/* Adjust the dashboard link to be placed far left */
+nav .dashboard-link {
+    margin: right 100px;; /* Pushes it far to the left */
+    margin-left: 0;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav .dashboard-link:hover {
+    text-decoration: underline;
+    color: #ffdd57;
+}
+
+nav a {
+    margin-left: 15px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration:solid;
+    color: #ebf3f3d8;
+    animation: ease-in-out;
+}
+
+main, .form-section, .features {
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+h1{
+    margin-bottom: 20px;
+    box-align: center;
+}
+
+.form-section h2 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    color: #2C3E50;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-section label {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    color: #1e2222;
+    display: block;
+    margin-top: 10px;
+    text-align: left;
+}
+
+input, select, textarea, button {
+    display: block;
+    width: 40%;
+    max-width: 400px;
+    margin: 5px 0;
+    padding: 5px;
+    font-size: 1em;
+}
+
+.form-section p {
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.form-section a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.cta-button {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.cta-button:hover {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+button {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    color: #FFFFFF;
+    background-color: #007BFF;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #043971;
+}
+
+/* Ensure the main content area expands and pushes the footer down */
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Hero Section */
+.hero {
+    background: #007BFF;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.hero-content h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 42px;
+    margin: 0;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin: 10px 0 20px;
+}
+
+/* Sections */
+.about, .benefits, .call-to-action {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.about h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 42px;
+    margin: 0;
+} 
+
+.benefits h2{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 42px;
+    margin: 0;
+}
+
+.call-to-action h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 42px;
+    margin: 0;
+}
+
+.about p{
+    font-size: 18px;
+    margin: 10px 0 20px;
+} 
+
+.benefits p{
+    font-size: 18px;
+    margin: 10px 0 20px;
+} 
+
+.call-to-action p {
+    font-size: 18px;
+    margin: 10px 0 20px;
+}
+
+.features .feature {
+    margin-bottom: 20px;
+}
+
+.signup-container {
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.signup-container h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #2C3E50;
+}
+
+.tab-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.tab-button {
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    background-color: #e1e1e1;
+    border-radius: 5px;
+}
+
+.tab-button.active {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.signup-form label {
+    text-align: left;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.signup-form input,
+.signup-form select {
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.map {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* General styling for the SOS button */
+/* Updated styling for a smaller SOS button */
+.sos-button {
+    position: fixed;
+    bottom: 78px;
+    right: 53px;
+    width: 80px;
+    height: 80px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+    
+}
+
+/* Hover effect for SOS button */
+.sos-button:hover {
+    transform: scale(1.1);
+}
+
+/* Optional: Active state styling */
+.sos-button:active {
+    background-color: #c9302c;
+}
+
+
+/* Footer fixed at the bottom */
+footer {
+    background-color: #007BFF;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    height: 35px;
+    width: 100%;
+    position: relative;
+}
+
+/* Image Animation */
+.animated-image {
+    width: 300px; /* Set width for the image */
+    margin: 20px 0; /* Space above and below the image */
+    opacity: 0; /* Start invisible for animation */
+    animation: fadeInUp 1s forwards; /* Animation for image */
+}
+
+#map {
+    width: 100%;
+    height: 500px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+}
+
+/* Base Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007BFF;
+    padding: 10px;
+    position: relative;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    margin: 0 10px;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #ffdd57;
+}
+
+/* Dropdown Content */
+.navbar .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.navbar .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.navbar .dropdown-content a {
+    color: #333;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.navbar .dropdown-content a:hover {
+    background-color: #f4f4f4;
+    color: #007BFF;
+}
+
+/* Mobile Menu Styling */
+.navbar .menu-toggle {
+    display: none;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.navbar .menu-toggle:focus {
+    outline: none;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar ul li {
+    margin: 0 10px;
+}
+
+.navbar ul.mobile-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #007BFF;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    z-index: 10;
+}
+
+.navbar ul.mobile-menu li {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.navbar ul.mobile-menu a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar ul.mobile-menu a:hover {
+    color: #ffdd57;
+}
+
+/* Show Menu on Mobile */
+@media (max-width: 768px) {
+    .navbar ul {
+        display: none;
+    }
+
+    .navbar .menu-toggle {
+        display: block;
+    }
+
+    .navbar ul.mobile-menu {
+        display: flex;
+    }
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px); /* Slide from below */
+        opacity: 0; /* Start invisible */
+    }
+    to {
+        transform: translateY(0); /* End at normal position */
+        opacity: 1; /* Fully visible */
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px); /* Start slightly lower */
+        opacity: 0; /* Start invisible */
+    }
+    to {
+        transform: translateY(0); /* End at normal position */
+        opacity: 1; /* Fully visible */
+    }
+}

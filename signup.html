@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - EmergenEase</title>
+    <link rel="icon" type="image/x-icon" href="logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://apis.mapmyindia.com/advancedmaps/v1/9aebdec0e106af9ba458250dafb0f3b8/map_load?v=1.5"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="navbar">
+        <a href="index.html" class="logo-link">
+            <img src="logo.png" alt="EmergenEase Logo" class="logo">
+            <h1>EmergenEase</h1>
+        </a>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <ul class="menu">
+            <li><a href="login.html">Login</a></li>
+            <li class="dropdown">
+                <a href="#">Nearby Services</a>
+                <div class="dropdown-content">
+                    <a href="fire.html">Nearby Fire Emergency Services</a>
+                    <a href="hospitals.html">Nearby Hospitals</a>
+                    <a href="police.html">Nearby Police Stations</a>
+                </div>
+            </li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+        <ul class="mobile-menu"></ul>
+    </header>
+
+    <main>
+    <section class="form-section">
+        <h2>Create an Account</h2>
+    <div class="signup-container">
+        <h2>Sign Up As</h2>
+        <div class="tab-buttons">
+            <button onclick="openTab(event, 'doctor')" class="tab-button active">Doctor</button>
+            <button onclick="openTab(event, 'patient')" class="tab-button">Patient</button>
+            <button onclick="openTab(event, 'hospital')" class="tab-button">Hospital</button>
+        </div>
+
+        <!-- Doctor Signup Form -->
+        <div id="doctor" class="tab-content active">
+            <form action="#" method="POST" class="signup-form">
+                <label for="doctor-name">Name:</label>
+                <input type="text" id="doctor-name" name="doctor-name" required>
+                
+                <label for="doctor-email">Email:</label>
+                <input type="email" id="doctor-email" name="doctor-email" required>
+                
+                <label for="doctor-password">Password:</label>
+                <input type="password" id="doctor-password" name="doctor-password" required>
+                
+                <label for="doctor-confirm-password">Confirm Password:</label>
+                <input type="password" id="doctor-confirm-password" name="doctor-confirm-password" required>
+
+                <label for="doctor-specialty">Specialty:</label>
+                <input type="text" id="doctor-specialty" name="doctor-specialty" required>
+                
+                <label for="doctor-license">License Number:</label>
+                <input type="text" id="doctor-license" name="doctor-license" required>
+
+                <label for="doctor-address">Address:</label>
+                <input type="text" id="doctor-address" name="doctor-address" required>
+
+                <label for="doctor-location">Select Location on Map:</label>
+                <div id="map-doctor" class="map"><!--<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d29232.57567393176!2d86.97580279297041!3d23.673384492780514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1731042136537!5m2!1sen!2sin" width="100%" height="300px" style="margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>--></div>
+
+                <!-- Hidden inputs to store latitude and longitude -->
+                <input type="hidden" id="doctor-lat" name="doctor-lat">
+                <input type="hidden" id="doctor-lng" name="doctor-lng">
+                
+                <button type="submit" class="submit-button" onclick="Map('map-doctor','doctor-lat','doctor-lng')">Sign Up as Doctor</button>
+            </form>
+        </div>
+
+        <!-- Patient Signup Form -->
+        <div id="patient" class="tab-content">
+            <form action="#" method="POST" class="signup-form">
+                <label for="patient-name">Name:</label>
+                <input type="text" id="patient-name" name="patient-name" required>
+                
+                <label for="patient-email">Email:</label>
+                <input type="email" id="patient-email" name="patient-email" required>
+                
+                <label for="patient-password">Password:</label>
+                <input type="password" id="patient-password" name="patient-password" required>
+
+                <label for="patient-confirm-password">Confirm Password:</label>
+                <input type="password" id="patient-confirm-password" name="patient-confirm-password" required>
+                
+                <label for="patient-age">Age:</label>
+                <input type="number" id="patient-age" name="patient-age" required>
+                
+                <label for="patient-gender">Gender:</label>
+                <select id="patient-gender" name="patient-gender" required>
+                    <option value="">Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+                <button type="submit" class="submit-button">Sign Up as Patient</button>
+            </form>
+        </div>
+
+        <!-- Hospital Signup Form -->
+        <div id="hospital" class="tab-content">
+            <form action="#" method="POST" class="signup-form">
+                <label for="hospital-name">Hospital Name:</label>
+                <input type="text" id="hospital-name" name="hospital-name" required>
+                
+                <label for="hospital-email">Email:</label>
+                <input type="email" id="hospital-email" name="hospital-email" required>
+                
+                <label for="hospital-password">Password:</label>
+                <input type="password" id="hospital-password" name="hospital-password" required>
+
+                <label for="hospital-confirm-password">Confirm Password:</label>
+                <input type="password" id="hospital-confirm-password" name="hospital-confirm-password" required>
+                
+                <label for="hospital-license">License Number:</label>
+                <input type="text" id="hospital-license" name="hospital-license" required>
+                
+                <label for="hospital-address">Address:</label>
+                <input type="text" id="hospital-address" name="hospital-address" required>
+
+                <label for="hospital-location">Select Location on Map:</label>
+                <div id="map-hospital" class="map"><!--<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d29232.57567393176!2d86.97580279297041!3d23.673384492780514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1731042136537!5m2!1sen!2sin" width="100%" height="300px" style="margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>--></div>
+
+                <!-- Hidden inputs to store latitude and longitude -->
+                <input type="hidden" id="hospital-lat" name="hospital-lat">
+                <input type="hidden" id="hospital-lng" name="hospital-lng">
+                
+                <button type="submit" class="submit-button" onclick="Map('map-doctor','doctor-lat','doctor-lng')">Sign Up as Hospital</button>
+            </form>
+        </div>
+        <p>Already have an account? <a href="login.html">Login here</a></p>
+    </div>
+    </section>
+    </main>
+    
+    <button class="sos-button" id="sosButton" onclick="sendEmail()"><img src="sos.gif" width="100"  height="100"></a></button>
+    <div id="message"></div>
+
+    <footer>
+        <p>&copy; 2024 EmergenEase. All rights reserved.</p>
+    </footer>
+</body>
+</html>

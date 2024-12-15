@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - EmergenEase</title>
+    <link rel="icon" type="image/x-icon" href="logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+</head>
+<body>
+    <header class="navbar">
+        <a href="index.html" class="logo-link">
+            <img src="logo.png" alt="EmergenEase Logo" class="logo">
+            <h1>EmergenEase</h1>
+        </a>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <ul class="menu">
+            <li><a href="signup.html">Sign Up</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="appointment.html">Book Appointments</a></li>
+            <li><a href="communicate.html">Message Center</a></li>
+            <li class="dropdown">
+                <a href="#">Nearby Services</a>
+                <div class="dropdown-content">
+                    <a href="fire.html">Nearby Fire Emergency Services</a>
+                    <a href="hospitals.html">Nearby Hospitals</a>
+                    <a href="police.html">Nearby Police Stations</a>
+                </div>
+            </li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="profile.html">Settings</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+        <ul class="mobile-menu"></ul>
+    </header>
+
+    <main class="main-content">
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Your Health, Simplified</h2>
+                <p>EmergenEase is your all-in-one healthcare platform, connecting patients, doctors, hospitals, and pharmacies for seamless medical appointments, emergency assistance, and secure communication.</p>
+            </div>
+        </section>
+       
+        <section class="about">
+            <h2>About EmergenEase</h2>
+            <p>EmergenEase is designed to streamline healthcare access and empower users to manage their health efficiently. With separate login portals for patients, doctors, hospitals, and pharmacies, we ensure that every interaction is secure and convenient.</p>
+        </section>
+
+        <section class="benefits">
+            <h2>Our Features</h2>
+            <div class="features">
+                <h3>Emergency SOS</h3>
+                <p>Send SOS alerts quickly in emergencies.</p>
+            </div>
+            <div class="features">
+                <h3>Book Appointments</h3>
+                <p>Schedule your healthcare appointments easily.</p>
+            </div>
+            <div class="features">
+                <h3>Message Center</h3>
+                <p>Stay connected with healthcare providers.</p>
+            </div>
+            <div class="features">
+                <h3>Secure Communication</h3>
+                <p>Securely manage health updates and consultations.</p>
+            </div>
+        </section>
+       <section class="benefits">
+        <h2>Why Choose EmergenEase?</h2>
+            <strong>Convenient Access:</strong> Manage your healthcare needs from any device, at any time.<br>
+            <strong>Fast Emergency Response:</strong> Quickly get the help you need when it matters most.<br>
+            <strong>Comprehensive Health Management:</strong> Centralize your appointments, prescriptions, and communication in one place.<br>
+    </section>
+       <section class="call-to-action">
+        <h2>Get Started with EmergenEase</h2>
+        <p>Join today and take control of your healthcare experience.</p>
+        <a href="signup.html" class="cta-button">Sign Up Now!</a>
+    </section>
+    </main>
+
+    <button class="sos-button" id="sosButton" onclick="sendEmail()"><img src="sos.gif" width="100"  height="100"></button>
+    <div id="message"></div>
+
+    <footer>
+        <p>&copy; 2024 EmergenEase. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function sendEmail() {
+            Email.send({
+                Host: "smtp.gmail.com",
+                Username: "nandipritamabcd@gmail.com",
+                Password: "Pritam192003#",
+                To: "iss2013asn@gmail.com",
+                From: "nandipritamabcd@gmail.com",
+                Subject: "Test Email",
+                Body: "This is a test email sent using SMTP.js"
+            })
+            .then(function (message) {
+                alert("Mail sent successfully"); // Alert message on successful email delivery
+            });
+        }
+    </script>
+</body>
+</html>

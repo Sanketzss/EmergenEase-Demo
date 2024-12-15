@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Center - EmergenEase</title>
+    <link rel="icon" type="image/x-icon" href="logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="navbar">
+        <a href="index.html" class="logo-link">
+            <img src="logo.png" alt="EmergenEase Logo" class="logo">
+            <h1>EmergenEase</h1>
+        </a>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <ul class="menu">
+            <li><a href="appointment.html">Book Appointments</a></li>
+            <li class="dropdown">
+                <a href="#">Nearby Services</a>
+                <div class="dropdown-content">
+                    <a href="fire.html">Nearby Fire Emergency Services</a>
+                    <a href="hospitals.html">Nearby Hospitals</a>
+                    <a href="police.html">Nearby Police Stations</a>
+                </div>
+            </li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="profile.html">Settings</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+        <ul class="mobile-menu"></ul>
+    </header>
+    <main>
+        <section class="messages">
+            <h2>Message Center</h2>
+            <ul id="messagesList">
+                <li>Message 1: Appointment confirmed.</li>
+                <li>Message 2: New message from Dr. Smith.</li>
+                <li>Message 3: Reminder for your upcoming appointment.</li>
+            </ul>
+            <form id="messageForm">
+                <label for="messageText">New Message</label>
+                <textarea id="messageText" required></textarea>
+                <button type="submit" class="submit-button">Send</button>
+            </form>
+        </section>
+    </main>
+
+    <button class="sos-button" id="sosButton" onclick="sendEmail()"><img src="sos.gif" width="100"  height="100"></a></button>
+    <div id="message"></div>
+    
+    <footer>
+        <p>&copy; 2024 EmergenEase. All rights reserved.</p>
+    </footer>
+</body>
+</html>
